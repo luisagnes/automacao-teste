@@ -1,2 +1,3 @@
 # Teste Automatizado
-Aqui será realizado uma automatização site demonstração, API e mobile, para mostrar minhas skills nesse sentido
+Aqui será realizado uma automatização de teste em um site demonstração, e de AAPI para mostrar minhas skills nesse sentido
+Feito em Python
