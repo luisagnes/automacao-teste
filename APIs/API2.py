@@ -6,7 +6,7 @@ class APITestSuite1(unittest.TestCase):
 
     def test_get_request(self):
         random_user_id = 1
-        random_id = random.randint(1, 10)  # Seleciona ID entre 1 e 10
+        random_id = random.randint(1, 10) 
         response = requests.get(f"https://jsonplaceholder.typicode.com/posts/{random_id}")
         self.assertEqual(response.status_code, 200)
         data = response.json()
@@ -14,7 +14,7 @@ class APITestSuite1(unittest.TestCase):
 
     def test_post_request(self):
         random_user_id = 2
-        random_id = random.randint(11, 20)  # Seleciona ID entre 11 e 20
+        random_id = random.randint(11, 20)
         payload = {
             "userId": random_user_id,
             "id": random_id,
@@ -28,7 +28,7 @@ class APITestSuite2(unittest.TestCase):
 
     def test_put_request(self):
         random_user_id = 3
-        random_id = random.randint(21, 30)  # Seleciona ID entre 21 e 30
+        random_id = random.randint(21, 30)  
         payload = {
             "userId": random_user_id,
             "id": random_id,
@@ -39,7 +39,7 @@ class APITestSuite2(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
 
     def test_delete_request(self):
-        random_id = random.randint(31, 40)  # Seleciona ID entre 31 e 40
+        random_id = random.randint(31, 40)  
         response = requests.delete(f"https://jsonplaceholder.typicode.com/posts/{random_id}")
         self.assertEqual(response.status_code, 200)
 
@@ -47,7 +47,7 @@ class APITestSuite3(unittest.TestCase):
 
     def test_another_get_request(self):
         random_user_id = 5
-        random_id = random.randint(41, 50)  # Seleciona ID entre 41 e 50
+        random_id = random.randint(41, 50)  
         response = requests.get(f"https://jsonplaceholder.typicode.com/posts/{random_id}")
         self.assertEqual(response.status_code, 200)
         data = response.json()
