@@ -6,52 +6,75 @@ class APITestSuite1(unittest.TestCase):
 
     def test_get_request(self):
         random_user_id = 1
-        random_id = random.randint(1, 20)  # Seleciona ID entre 1 e 20
+        random_id = random.randint(1, 20)  
         response = requests.get(f"https://jsonplaceholder.typicode.com/todos/{random_id}")
         self.assertEqual(response.status_code, 200)
         data = response.json()
         self.assertEqual(data['userId'], random_user_id)
 
+        print(f"GET Request - ID: {random_id}, UserID: {random_user_id}")
+        print(f"Title: {data['title']}")
+        print(f"Completed: {data['completed']}")
+        print("\n")
+
     def test_post_request(self):
-        random_user_id = 2
-        random_id = random.randint(21, 40)  # Seleciona ID entre 21 e 40
+        random_user_id = 11
+        random_id = random.randint(201, 220)  
         payload = {
             "userId": random_user_id,
             "id": random_id,
-            "title": "Teste de post",
+            "title": "Teste do Luis aqui",
             "completed": False
         }
         response = requests.post("https://jsonplaceholder.typicode.com/todos", json=payload)
         self.assertEqual(response.status_code, 201)
 
+        print(f"POST Request - ID: {random_id}, UserID: {random_user_id}")
+        print("Title: Teste do Luis aqui")
+        print("Completed: False")
+        print("\n")
+
 class APITestSuite2(unittest.TestCase):
 
     def test_put_request(self):
         random_user_id = 3
-        random_id = random.randint(41, 60)  # Seleciona ID entre 41 e 60
+        random_id = random.randint(41, 60)  
         payload = {
             "userId": random_user_id,
             "id": random_id,
-            "title": "Teste de put",
+            "title": "mudando aqui",
             "completed": True
         }
         response = requests.put(f"https://jsonplaceholder.typicode.com/todos/{random_id}", json=payload)
         self.assertEqual(response.status_code, 200)
 
+        print(f"PUT Request - ID: {random_id}, UserID: {random_user_id}")
+        print("Title: mudando aqui")
+        print("Completed: True")
+        print("\n")
+
     def test_delete_request(self):
-        random_id = random.randint(61, 80)  # Seleciona ID entre 61 e 80
+        random_id = random.randint(61, 80)  
         response = requests.delete(f"https://jsonplaceholder.typicode.com/todos/{random_id}")
         self.assertEqual(response.status_code, 200)
+
+        print(f"DELETE Request - ID: {random_id}")
+        print("\n")
 
 class APITestSuite3(unittest.TestCase):
 
     def test_another_get_request(self):
         random_user_id = 5
-        random_id = random.randint(81, 100)  # Seleciona ID entre 81 e 100
+        random_id = random.randint(81, 100)  
         response = requests.get(f"https://jsonplaceholder.typicode.com/todos/{random_id}")
         self.assertEqual(response.status_code, 200)
         data = response.json()
         self.assertEqual(data['userId'], random_user_id)
+
+        print(f"GET Request (nova solicitação) - ID: {random_id}, UserID: {random_user_id}")
+        print(f"Title: {data['title']}")
+        print(f"Completed: {data['completed']}")
+        print("\n")
 
 if __name__ == '__main__':
     suite1 = unittest.TestLoader().loadTestsFromTestCase(APITestSuite1)
