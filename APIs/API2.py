@@ -24,14 +24,14 @@ class APITestSuite1(unittest.TestCase):
             "userId": random_user_id,
             "id": random_id,
             "title": "Luis Brito",
-            "body": "Mental bom"
+            "body": "Aqui tem um texto do luis pronto"
         }
         response = requests.post("https://jsonplaceholder.typicode.com/posts", json=payload)
         self.assertEqual(response.status_code, 201)
 
         print(f"POST Request - ID: {random_id}, UserID: {random_user_id}")
         print(f"Title: Luis Brito")
-        print(f"Body: Mental bom")
+        print(f"Body: Aqui tem um texto do luis pronto")
         print("\n")
 
 class APITestSuite2(unittest.TestCase):
